@@ -1,0 +1,2 @@
+type = "console";
+systemd = false;

@@ -63,3 +63,4 @@ RUN cd /home/abuild \
 COPY passwd /home/abuild/rootfs/etc
 COPY group /home/abuild/rootfs/etc
 COPY worker-controller.inc /home/abuild/rootfs/etc/rspamd/override.d
+COPY logging.inc /home/abuild/rootfs/etc/rspamd/override.d
