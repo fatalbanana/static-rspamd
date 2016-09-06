@@ -1,0 +1,6 @@
+FROM scratch
+COPY rootfs/ /
+RUN ["/bin/chown", "rspamd:rspamd", "/var/lib/rspamd"]
+USER rspamd
+CMD ["/usr/bin/rspamd", "-f"]
+EXPOSE 11333 11334

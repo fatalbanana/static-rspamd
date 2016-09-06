@@ -1,0 +1,16 @@
+machine:
+    services:
+     - docker
+
+test:
+  override:
+    - docker build -t builder .
+    - docker run -d builder /usr/bin/top > /tmp/builderid
+    - mkdir ~/docker
+    - docker cp `cat /tmp/builderid`:/home/abuild/rootfs ~/docker/
+    - mv Dockerfile.image ~/docker/Dockerfile
+    - docker build -t rspamd ~/docker
+    - docker save rspamd > ~/rspamd.tar
+    - xz ~/rspamd.tar
+  post:
+    - mv ~/rspamd.tar.xz $CIRCLE_ARTIFACTS
