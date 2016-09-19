@@ -8,6 +8,7 @@ test:
     - docker run -d builder /usr/bin/top > /tmp/builderid
     - mkdir ~/docker
     - docker cp `cat /tmp/builderid`:/home/abuild/rootfs ~/docker/
+    - docker stop `cat /tmp/builderid`
     - mv Dockerfile.image ~/docker/Dockerfile
     - docker build -t rspamd ~/docker
     - docker save rspamd > ~/rspamd.tar

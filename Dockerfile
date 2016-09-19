@@ -2,11 +2,17 @@ FROM alpine
 RUN adduser -DG abuild abuild \
 	&& apk update \
 	&& apk upgrade \
-	&& apk add alpine-sdk \
-	&& apk add boost-dev cmake ragel rsync sudo \
+	&& apk add --force pcre2-dev@community \
+	&& apk add alpine-sdk boost-dev cmake ragel rsync sudo \
 	&& echo "abuild ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/abuild
 USER abuild
+ADD https://github.com/libfann/fann/archive/2.2.0.tar.gz /home/abuild/
 RUN cd /home/abuild \
+	&& tar xf 2.2.0.tar.gz \
+	&& cd fann-2.2.0 \
+	&& cmake -DCMAKE_INSTALL_PREFIX=/home/abuild/fann . \
+	&& make install \
+	&& cd .. \
 	&& git clone https://github.com/01org/hyperscan.git \
 	&& mv hyperscan git.hyperscan \
 	&& cd git.hyperscan \
@@ -37,9 +43,7 @@ RUN cd /home/abuild \
 	&& abuild -r \
 	&& cd ../sqlite \
 	&& abuild -r \
-	&& cd ../../community/pcre2 \
-	&& abuild -r \
-	&& sudo apk add /home/abuild/packages/main/x86_64/*apk /home/abuild/packages/community/x86_64/*apk \
+	&& sudo apk add /home/abuild/packages/main/x86_64/*apk \
 	&& cd /home/abuild/aports/testing/rspamd \
 	&& abuild -r \
 	&& sudo apk add /home/abuild/packages/testing/x86_64/rspamd*apk \
