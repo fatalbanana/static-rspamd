@@ -10,7 +10,7 @@ USER abuild
 RUN cd /home/abuild \
 	&& tar xf 2.2.0.tar.gz \
 	&& cd fann-2.2.0 \
-	&& cmake -DCMAKE_INSTALL_PREFIX=/home/abuild/fann . \
+	&& cmake -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=/home/abuild/fann . \
 	&& make install \
 	&& cd .. \
 	&& git clone https://github.com/01org/hyperscan.git \
