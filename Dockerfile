@@ -1,5 +1,6 @@
 FROM alpine
 ADD https://github.com/libfann/fann/archive/2.2.0.tar.gz /home/abuild/
+COPY fann.patch /home/abuild/
 RUN adduser -DG abuild abuild \
 	&& apk update \
 	&& apk upgrade \
@@ -10,7 +11,8 @@ USER abuild
 RUN cd /home/abuild \
 	&& tar xf 2.2.0.tar.gz \
 	&& cd fann-2.2.0 \
-	&& cmake -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=/home/abuild/fann . \
+	&& git apply ../fann.patch
+	&& cmake -DCMAKE_INSTALL_PREFIX=/home/abuild/fann . \
 	&& make install \
 	&& cd .. \
 	&& git clone https://github.com/01org/hyperscan.git \
