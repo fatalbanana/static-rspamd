@@ -11,7 +11,7 @@ USER abuild
 RUN cd /home/abuild \
 	&& tar xf 2.2.0.tar.gz \
 	&& cd fann-2.2.0 \
-	&& git apply ../fann.patch
+	&& git apply ../fann.patch \
 	&& cmake -DCMAKE_INSTALL_PREFIX=/home/abuild/fann . \
 	&& make install \
 	&& cd .. \
