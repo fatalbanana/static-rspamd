@@ -37,6 +37,8 @@ RUN cd /home/abuild \
 	&& git rebase upstream/master \
 	&& cd main/file \
 	&& abuild -r \
+	&& cd ../util-linux \
+	&& abuild -r \
 	&& cd ../gettext \
 	&& abuild -r \
 	&& cd ../glib \
