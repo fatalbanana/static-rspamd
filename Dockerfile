@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:edge
 ADD https://github.com/libfann/fann/archive/2.2.0.tar.gz /home/abuild/
 COPY fann.patch /home/abuild/
 RUN adduser -DG abuild abuild \
