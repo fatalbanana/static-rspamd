@@ -4,7 +4,7 @@ COPY fann.patch /home/abuild/
 RUN adduser -DG abuild abuild \
 	&& apk update \
 	&& apk upgrade \
-	&& apk add alpine-sdk boost-dev cmake openssl-dev luajit-dev python2-dev ragel rsync sudo \
+	&& apk add alpine-sdk boost-dev cmake openssl-dev luajit-dev ragel rsync sudo \
 	&& echo "abuild ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/abuild \
 	&& chown abuild:abuild /home/abuild/2.2.0.tar.gz
 USER abuild
@@ -35,6 +35,8 @@ RUN cd /home/abuild \
 	&& git remote add upstream https://github.com/alpinelinux/aports.git \
 	&& git fetch upstream \
 	&& git rebase upstream/master \
+	&& cd main/python2 \
+	&& abuild -r \
 	&& cd main/file \
 	&& abuild -r \
 	&& cd ../util-linux \
