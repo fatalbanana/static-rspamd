@@ -1,10 +1,10 @@
-FROM alpine:edge
+FROM alpine
 ADD https://github.com/libfann/fann/archive/2.2.0.tar.gz /home/abuild/
 COPY fann.patch /home/abuild/
 RUN adduser -DG abuild abuild \
 	&& apk update \
 	&& apk upgrade \
-	&& apk add alpine-sdk boost-dev cmake libressl-dev luajit-dev ragel rsync sudo \
+	&& apk add alpine-sdk boost-dev cmake openssl-dev luajit-dev ragel rsync sudo \
 	&& echo "abuild ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/abuild \
 	&& chown abuild:abuild /home/abuild/2.2.0.tar.gz
 USER abuild
