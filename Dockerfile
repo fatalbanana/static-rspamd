@@ -30,13 +30,11 @@ RUN cd /home/abuild \
 	&& git config --global user.name "Your Name" \
 	&& abuild-keygen -ai \
 	&& cd /home/abuild \
-	&& git clone -b static https://github.com/fatalbanana/aports.git \
+	&& git clone -b rspamd-static.3.4-stable https://github.com/fatalbanana/aports.git \
 	&& cd aports \
 	&& git remote add upstream https://github.com/alpinelinux/aports.git \
 	&& git fetch upstream \
-	&& git rebase upstream/master \
-	&& cd main/python2 \
-	&& abuild -r \
+	&& git rebase upstream/3.4-stable \
 	&& cd main/file \
 	&& abuild -r \
 	&& cd ../util-linux \
