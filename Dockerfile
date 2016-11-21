@@ -50,7 +50,7 @@ RUN cd /home/abuild \
 	&& cd ../../community/pcre2 \
 	&& abuild -r \
 	&& sudo apk add /home/abuild/packages/main/x86_64/*apk /home/abuild/packages/community/x86_64/*apk \
-	&& cd /home/abuild/aports/testing/rspamd \
+	&& cd /home/abuild/aports/testing/static-rspamd \
 	&& abuild -r \
 	&& sudo apk add /home/abuild/packages/testing/x86_64/rspamd*apk \
 	&& sudo apk add busybox-static \
