@@ -1,6 +1,6 @@
 FROM alpine:3.4
 ADD https://github.com/libfann/fann/archive/2.2.0.tar.gz /home/abuild/
-COPY fann.patch /home/abuild/
+COPY *.patch /home/abuild/
 RUN adduser -DG abuild abuild \
 	&& apk update \
 	&& apk upgrade \
@@ -30,11 +30,9 @@ RUN cd /home/abuild \
 	&& git config --global user.name "Your Name" \
 	&& abuild-keygen -ai \
 	&& cd /home/abuild \
-	&& git clone -b rspamd-static.3.4-stable https://github.com/fatalbanana/aports.git \
+	&& git clone -b 3.4-stable https://github.com/alpinelinux/aports.git \
 	&& cd aports \
-	&& git remote add upstream https://github.com/alpinelinux/aports.git \
-	&& git fetch upstream \
-	&& git rebase upstream/3.4-stable \
+	&& git apply /home/abuild/aports*patch \
 	&& cd main/file \
 	&& abuild -r \
 	&& cd ../util-linux \

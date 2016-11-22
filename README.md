@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/fatalbanana/static-rspamd/tree/master.svg?style=svg)](https://circleci.com/gh/fatalbanana/static-rspamd/tree/master)
+[![Docker Repository on Quay](https://quay.io/repository/fatalbanana/rspamd/status "Docker Repository on Quay")](https://quay.io/repository/fatalbanana/rspamd)
 
 ## Static Rspamd
 

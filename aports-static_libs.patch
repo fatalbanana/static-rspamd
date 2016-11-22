@@ -1,0 +1,82 @@
+commit c98bc6400054719247d937d0a0d1d394b14892c7
+Author: Andrew Lewis <nerf@judo.za.org>
+Date:   Mon Nov 21 12:30:33 2016 +0200
+
+    Patch dependencies to provide static libraries
+
+diff --git a/main/file/APKBUILD b/main/file/APKBUILD
+index d19de68..510d313 100644
+--- a/main/file/APKBUILD
++++ b/main/file/APKBUILD
+@@ -31,6 +31,7 @@ build() {
+ 		--host=$CHOST \
+ 		--prefix=/usr \
+ 		--datadir=/usr/share \
++		--enable-static \
+ 		|| return 1
+ 	make || return 1
+ 	make tests || return 1
+diff --git a/main/gettext/APKBUILD b/main/gettext/APKBUILD
+index 0e75ea1..bb55d8c 100644
+--- a/main/gettext/APKBUILD
++++ b/main/gettext/APKBUILD
+@@ -28,7 +28,7 @@ build() {
+ 		--prefix=/usr \
+ 		--enable-threads=posix \
+ 		--disable-java \
+-		--disable-static \
++		--enable-static \
+ 		|| return 1
+ 	make || return 1
+ }
+diff --git a/main/glib/APKBUILD b/main/glib/APKBUILD
+index 25fb003..972a825 100644
+--- a/main/glib/APKBUILD
++++ b/main/glib/APKBUILD
+@@ -39,6 +39,7 @@ build() {
+ 		--disable-compile-warnings \
+ 		--with-pcre=system \
+ 		--with-pic \
++		--enable-static \
+ 		|| return 1
+ 	make || return 1
+ }
+diff --git a/main/libevent/APKBUILD b/main/libevent/APKBUILD
+index a4538bd..f20d4b3 100644
+--- a/main/libevent/APKBUILD
++++ b/main/libevent/APKBUILD
+@@ -25,7 +25,7 @@ build() {
+ 		--host=$CHOST \
+ 		--prefix=/usr \
+ 		--sysconfdir=/etc \
+-		--disable-static \
++		--enable-static \
+ 		|| return 1
+ 	make || return 1
+ }
+diff --git a/main/sqlite/APKBUILD b/main/sqlite/APKBUILD
+index 6bac2bb..e7ffe08 100644
+--- a/main/sqlite/APKBUILD
++++ b/main/sqlite/APKBUILD
+@@ -49,7 +49,7 @@ build() {
+ 		--host=$CHOST \
+ 		--prefix=/usr \
+ 		--enable-threadsafe \
+-		--disable-static \
++		--enable-static \
+ 		--enable-readline \
+ 		--enable-dynamic-extensions \
+ 		|| return 1
+diff --git a/main/util-linux/APKBUILD b/main/util-linux/APKBUILD
+index a781787..637eee7 100644
+--- a/main/util-linux/APKBUILD
++++ b/main/util-linux/APKBUILD
+@@ -101,7 +101,7 @@ libmount() {
+ 	pkgdesc="Block device identification library from util-linux"
+ 	depends=
+ 	mkdir -p "$subpkgdir"/lib
+-	mv "$pkgdir"/lib/libmount.so.* "$subpkgdir"/lib/
++	mv "$pkgdir"/lib/libmount* "$subpkgdir"/lib/
+ }
+ 
+ libsmartcols() {
