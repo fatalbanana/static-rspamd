@@ -35,7 +35,7 @@ RUN cd /home/abuild \
 	&& git apply /home/abuild/aports*patch \
 	&& cd main/musl \
 	&& abuild -r \
-	&& cd ../main/file \
+	&& cd ../file \
 	&& abuild -r \
 	&& cd ../util-linux \
 	&& abuild -r \
