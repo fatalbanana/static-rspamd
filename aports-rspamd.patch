@@ -13,7 +13,7 @@ index 0000000..5bf520e
 +# Maintainer: Andrew Lewis <nerf@judo.za.org>
 +# Contributor: Valery Kartel <valery.kartel@gmail.com>
 +pkgname=rspamd
-+pkgver=1.4.1
++pkgver=1.4.2
 +pkgrel=1
 +pkgdesc="Rapid spam filtering system"
 +url="https://rspamd.com"
@@ -75,15 +75,15 @@ index 0000000..5bf520e
 +	rm -rf "$pkgdir"/usr/share/man
 +}
 +
-+md5sums="e17039309da0039aab8e966692705437  rspamd-1.4.1.tar.xz
++md5sums="b6177ed765bd758cc6b051f8fea2a3d1  rspamd-1.4.2.tar.xz
 +c152c6a90f6ae9e5a7a1d137dfbc0305  rspamd.logrotated
 +3f32a16e76e1461ffba9231cfb1e3d17  rspamd.initd
 +ecfea2a25b95727ae91c04001fbd3e46  rspamd.confd"
-+sha256sums="11e39e4b44a85feaf546696d28a72ffc32e35c01a028a251d5175ba58343eb28  rspamd-1.4.1.tar.xz
++sha256sums="d106f98a632ffc5cbc5e7482067d568db7687a2ffb078f97f528f9202f90a5a1  rspamd-1.4.2.tar.xz
 +6c5e79e9052d957f3d0d634b2ae7a56bbc0901a5d6946dc991c92f19a72fce97  rspamd.logrotated
 +6b531f95724b2a3990524ab09b7304ce4e811b6e082dfdbe633f201a6bc7eee3  rspamd.initd
 +82be6a663af2e2333b0dfbbbfd05a9ff3d02e05c7e506235b1b0dbd9d0b72972  rspamd.confd"
-+sha512sums="bc3be3f20a9692a5d188d9a254ad459dba4ca01ae3c917689943be7eed85e17ab638e0d0b9f4dd574864b4f39eb7a728b7b0ecf3088727a92dfb99a2df4a5a6d  rspamd-1.4.1.tar.xz
++sha512sums="7a2c9c736d6612088eb8d48e313feec310c740263aa3a5e30b1ae88937ecf088de533589a8ef783e238fe3dc5e579592220bd86ea0e45672bd3fc06c52f96782  rspamd-1.4.2.tar.xz
 +2efe28575c40d1fba84b189bb872860e744400db80dce2f6330be6c6287fb3f46e6511284729b957488bf40bcb9b0952e26df9934f5f138334bd2766075c45cb  rspamd.logrotated
 +30b45812ef68f2b82d0d7f370b44bec52691296c7349c96c8273342eb4f9b5708c13ad97b13f63d81bee588b4e459c0da3092a62adff9e5b8938f44546df3dcd  rspamd.initd
 +0b73b159cec9a4a1d337fbb429814f78da23b55f72c9fb8a777ab5f06634206a4f9b25e587f8dbfa7c3242ac5501ebcc90b9a0e926adfd37e14a12ac4607fa62  rspamd.confd"
