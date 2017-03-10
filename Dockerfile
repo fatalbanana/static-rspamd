@@ -14,22 +14,10 @@ RUN cd /home/abuild \
 	&& git apply ../fann.patch \
 	&& cmake -DCMAKE_INSTALL_PREFIX=/home/abuild/fann . \
 	&& make install \
-	&& cd .. \
-	&& git clone https://github.com/01org/hyperscan.git \
-	&& mv hyperscan git.hyperscan \
-	&& cd git.hyperscan \
-	&& git checkout v4.4.1 \
-	&& cd .. \
-	&& mkdir hyperscan build.hyperscan \
-	&& cd build.hyperscan \
-	&& cmake -DCMAKE_INSTALL_PREFIX=/home/abuild/hyperscan \
-	-DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS=-march=core2 -DCMAKE_CXX_FLAGS=-march=core2 ../git.hyperscan \
-	&& make \
-	&& make install/strip \
+	&& cd /home/abuild \
 	&& git config --global user.email "you@example.com" \
 	&& git config --global user.name "Your Name" \
 	&& abuild-keygen -ai \
-	&& cd /home/abuild \
 	&& git clone -b 3.5-stable https://github.com/alpinelinux/aports.git \
 	&& cd aports \
 	&& git apply /home/abuild/aports*patch \
@@ -50,6 +38,18 @@ RUN cd /home/abuild \
 	&& cd ../../community/pcre2 \
 	&& abuild -r \
 	&& sudo apk add /home/abuild/packages/main/x86_64/*apk /home/abuild/packages/community/x86_64/*apk \
+	&& cd /home/abuild \
+	&& git clone https://github.com/01org/hyperscan.git \
+	&& mv hyperscan git.hyperscan \
+	&& cd git.hyperscan \
+	&& git checkout v4.4.1 \
+	&& cd .. \
+	&& mkdir hyperscan build.hyperscan \
+	&& cd build.hyperscan \
+	&& cmake -DCMAKE_INSTALL_PREFIX=/home/abuild/hyperscan \
+	-DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS=-march=core2 -DCMAKE_CXX_FLAGS=-march=core2 ../git.hyperscan \
+	&& make \
+	&& make install/strip \
 	&& cd /home/abuild/aports/testing/static-rspamd \
 	&& abuild -r \
 	&& sudo apk add /home/abuild/packages/testing/x86_64/rspamd*apk \
