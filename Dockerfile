@@ -4,7 +4,7 @@ COPY *.patch /home/abuild/
 RUN adduser -DG abuild abuild \
 	&& apk update \
 	&& apk upgrade \
-	&& apk add alpine-sdk boost-dev cmake libressl-dev luajit-dev ragel rsync sed sudo \
+	&& apk add alpine-sdk boost-dev cmake icu libressl-dev luajit-dev ragel rsync sed sudo \
 	&& echo "abuild ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/abuild \
 	&& chown abuild:abuild /home/abuild/2.2.0.tar.gz
 USER abuild
