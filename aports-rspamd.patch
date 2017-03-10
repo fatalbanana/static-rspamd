@@ -1,6 +1,6 @@
 diff --git a/testing/static-rspamd/APKBUILD b/testing/static-rspamd/APKBUILD
 new file mode 100644
-index 0000000..f2e845b
+index 0000000..800ed15
 --- /dev/null
 +++ b/testing/static-rspamd/APKBUILD
 @@ -0,0 +1,78 @@
@@ -17,7 +17,7 @@ index 0000000..f2e845b
 +pkggroups="rspamd"
 +depends=""
 +depends_dev=""
-+makedepends="$depends_dev cmake openssl-dev libevent-dev glib-dev
++makedepends="$depends_dev cmake libressl-dev libevent-dev glib-dev
 +	luajit-dev sqlite-dev file-dev pcre2-dev"
 +options="!strip"
 +install="$pkgname.pre-install"
