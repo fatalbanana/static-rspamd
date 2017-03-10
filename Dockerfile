@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:3.5
 ADD https://github.com/libfann/fann/archive/2.2.0.tar.gz /home/abuild/
 COPY *.patch /home/abuild/
 RUN adduser -DG abuild abuild \
@@ -30,7 +30,7 @@ RUN cd /home/abuild \
 	&& git config --global user.name "Your Name" \
 	&& abuild-keygen -ai \
 	&& cd /home/abuild \
-	&& git clone -b 3.4-stable https://github.com/alpinelinux/aports.git \
+	&& git clone -b 3.5-stable https://github.com/alpinelinux/aports.git \
 	&& cd aports \
 	&& git apply /home/abuild/aports*patch \
 	&& cd main/musl \
