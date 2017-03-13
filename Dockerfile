@@ -68,7 +68,7 @@ RUN cd /home/abuild \
 	&& rsync -a /usr/share/rspamd /home/abuild/rootfs/usr/share \
 	&& rsync -a /etc/rspamd /home/abuild/rootfs/etc \
 	&& cp /usr/share/misc/magic.mgc /home/abuild/rootfs/usr/share/misc \
-	&& rsync -a /etc/ssl /home/abuild/rootfs/etc/ssl \
+	&& rsync -a /etc/ssl /home/abuild/rootfs/etc \
 	&& rsync -a /usr/share/ca-certificates /home/abuild/rootfs/usr/share \
 	&& cd /home/abuild/rootfs/bin \
 	&& for i in `./busybox.static --list`; do ln -s busybox.static ${i}; done
