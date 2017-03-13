@@ -1,0 +1,12 @@
+diff --git a/main/icu/APKBUILD b/main/icu/APKBUILD
+index 99f6bad..6f36c92 100644
+--- a/main/icu/APKBUILD
++++ b/main/icu/APKBUILD
+@@ -58,6 +58,7 @@ build() {
+ 		--with-data-packaging=library \
+ 		--disable-samples \
+ 		--mandir=/usr/share/man \
++		--enable-static \
+ 		|| return 1
+ 	make || return 1
+ }
