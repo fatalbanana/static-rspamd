@@ -1,9 +1,9 @@
 diff --git a/testing/static-rspamd/APKBUILD b/testing/static-rspamd/APKBUILD
 new file mode 100644
-index 0000000..800ed15
+index 0000000..af2b8ec
 --- /dev/null
 +++ b/testing/static-rspamd/APKBUILD
-@@ -0,0 +1,78 @@
+@@ -0,0 +1,79 @@
 +# Maintainer: Andrew Lewis <nerf@judo.za.org>
 +# Contributor: Valery Kartel <valery.kartel@gmail.com>
 +pkgname=rspamd
@@ -30,6 +30,7 @@ index 0000000..800ed15
 +_builddir="$srcdir"/$pkgname-$pkgver
 +build() {
 +	cd "$_builddir"
++	sed -i CMakeLists.txt -e "/LIST(APPEND CMAKE_REQUIRED_LIBRARIES nsl)/d"
 +	cmake CMakeLists.txt \
 +		-DCMAKE_INSTALL_PREFIX=/usr \
 +		-DCONFDIR=/etc/$pkgname \
