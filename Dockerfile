@@ -44,7 +44,7 @@ RUN cd /home/abuild \
 	&& git clone https://github.com/01org/hyperscan.git \
 	&& mv hyperscan git.hyperscan \
 	&& cd git.hyperscan \
-	&& git checkout v4.4.1 \
+	&& git checkout v4.3.2 \
 	&& cd .. \
 	&& mkdir hyperscan build.hyperscan \
 	&& cd build.hyperscan \
