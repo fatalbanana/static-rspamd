@@ -44,12 +44,12 @@ RUN cd /home/abuild \
 	&& git clone https://github.com/01org/hyperscan.git \
 	&& mv hyperscan git.hyperscan \
 	&& cd git.hyperscan \
-	&& git checkout v4.3.2 \
+	&& git checkout v4.4.1 \
 	&& cd .. \
 	&& mkdir hyperscan build.hyperscan \
 	&& cd build.hyperscan \
 	&& cmake -DCMAKE_INSTALL_PREFIX=/home/abuild/hyperscan \
-	-DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS=-march=core2 -DCMAKE_CXX_FLAGS=-march=core2 ../git.hyperscan \
+	-DCMAKE_BUILD_TYPE=Release ../git.hyperscan \
 	&& make \
 	&& make install/strip \
 	&& cd /home/abuild/aports/testing/static-rspamd \
