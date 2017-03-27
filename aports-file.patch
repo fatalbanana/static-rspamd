@@ -1,0 +1,12 @@
+diff --git a/main/file/APKBUILD b/main/file/APKBUILD
+index fbdb5bb..8a1935c 100644
+--- a/main/file/APKBUILD
++++ b/main/file/APKBUILD
+@@ -29,6 +29,7 @@ build() {
+ 		--host=$CHOST \
+ 		--prefix=/usr \
+ 		--datadir=/usr/share \
++		--enable-static \
+ 		|| return 1
+ 	make || return 1
+ 	make tests || return 1

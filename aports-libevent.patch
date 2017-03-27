@@ -1,0 +1,13 @@
+diff --git a/main/libevent/APKBUILD b/main/libevent/APKBUILD
+index 863bb0d..36df993 100644
+--- a/main/libevent/APKBUILD
++++ b/main/libevent/APKBUILD
+@@ -38,7 +38,7 @@ build() {
+ 		--host=$CHOST \
+ 		--prefix=/usr \
+ 		--sysconfdir=/etc \
+-		--disable-static \
++		--enable-static \
+ 		|| return 1
+ 	make || return 1
+ }

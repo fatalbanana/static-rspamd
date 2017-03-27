@@ -1,0 +1,12 @@
+diff --git a/main/glib/APKBUILD b/main/glib/APKBUILD
+index 363005c..fda68c1 100644
+--- a/main/glib/APKBUILD
++++ b/main/glib/APKBUILD
+@@ -41,6 +41,7 @@ build() {
+ 		--disable-compile-warnings \
+ 		--with-pcre=system \
+ 		--with-pic \
++		--enable-static \
+ 		|| return 1
+ 	make || return 1
+ }
