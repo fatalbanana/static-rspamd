@@ -1,6 +1,6 @@
 diff --git a/testing/static-rspamd/APKBUILD b/testing/static-rspamd/APKBUILD
 new file mode 100644
-index 0000000..5215827
+index 0000000..99ee4c0
 --- /dev/null
 +++ b/testing/static-rspamd/APKBUILD
 @@ -0,0 +1,79 @@
@@ -21,7 +21,7 @@ index 0000000..5215827
 +	luajit-dev sqlite-dev file-dev pcre2-dev"
 +options="!strip"
 +install="$pkgname.pre-install"
-+source="https://aluminium.tinfoilcat.org/rspamd-snap/$pkgname-$pkgver.tar.xz
++source="https://www.rspamd.com/downloads/$pkgname-$pkgver.tar.xz
 +	$pkgname.logrotated
 +	$pkgname.initd
 +	$pkgname.confd
@@ -71,15 +71,15 @@ index 0000000..5215827
 +	rm -rf "$pkgdir"/usr/share/man
 +}
 +
-+md5sums="28f3d4e93f199779162301a777965e9f  rspamd-1.5.5.tar.xz
++md5sums="5423e1385b949ea90ba3fe40af1acd92  rspamd-1.5.5.tar.xz
 +c152c6a90f6ae9e5a7a1d137dfbc0305  rspamd.logrotated
 +3f32a16e76e1461ffba9231cfb1e3d17  rspamd.initd
 +ecfea2a25b95727ae91c04001fbd3e46  rspamd.confd"
-+sha256sums="6c53649c9f9313d19229fb9a6f16f4aeecba918784fc43c0b054a982290898c2  rspamd-1.5.5.tar.xz
++sha256sums="42faeea3b5ec2005e775b073397aefdf16d30cb0474083069724d5bc1f995edb  rspamd-1.5.5.tar.xz
 +6c5e79e9052d957f3d0d634b2ae7a56bbc0901a5d6946dc991c92f19a72fce97  rspamd.logrotated
 +6b531f95724b2a3990524ab09b7304ce4e811b6e082dfdbe633f201a6bc7eee3  rspamd.initd
 +82be6a663af2e2333b0dfbbbfd05a9ff3d02e05c7e506235b1b0dbd9d0b72972  rspamd.confd"
-+sha512sums="e15eb2135cc9e641dc21c1331d16f2b4bcd0fef667cb5cb9d3a413a24f24ffe5f9a2432e6ad058ea27a650e4c5707a6e1308dd882f94f484f101a27822934972  rspamd-1.5.5.tar.xz
++sha512sums="74757e8a7a0153b576d524917921f74a255cc4e1e21a97963ef38d0c332e4c8c439eff451386d345de3cb7c781167eb74053ae716a8b990b4e242cba714663bb  rspamd-1.5.5.tar.xz
 +2efe28575c40d1fba84b189bb872860e744400db80dce2f6330be6c6287fb3f46e6511284729b957488bf40bcb9b0952e26df9934f5f138334bd2766075c45cb  rspamd.logrotated
 +30b45812ef68f2b82d0d7f370b44bec52691296c7349c96c8273342eb4f9b5708c13ad97b13f63d81bee588b4e459c0da3092a62adff9e5b8938f44546df3dcd  rspamd.initd
 +0b73b159cec9a4a1d337fbb429814f78da23b55f72c9fb8a777ab5f06634206a4f9b25e587f8dbfa7c3242ac5501ebcc90b9a0e926adfd37e14a12ac4607fa62  rspamd.confd"
