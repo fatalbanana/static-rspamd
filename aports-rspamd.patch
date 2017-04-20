@@ -1,13 +1,13 @@
 diff --git a/testing/static-rspamd/APKBUILD b/testing/static-rspamd/APKBUILD
 new file mode 100644
-index 0000000..99ee4c0
+index 0000000..e172ed3
 --- /dev/null
 +++ b/testing/static-rspamd/APKBUILD
 @@ -0,0 +1,79 @@
 +# Maintainer: Andrew Lewis <nerf@judo.za.org>
 +# Contributor: Valery Kartel <valery.kartel@gmail.com>
 +pkgname=rspamd
-+pkgver=1.5.5
++pkgver=1.5.6
 +pkgrel=1
 +pkgdesc="Rapid spam filtering system"
 +url="https://rspamd.com"
@@ -71,15 +71,15 @@ index 0000000..99ee4c0
 +	rm -rf "$pkgdir"/usr/share/man
 +}
 +
-+md5sums="5423e1385b949ea90ba3fe40af1acd92  rspamd-1.5.5.tar.xz
++md5sums="4fcb1598fa38823981ec82f97deb59d1  rspamd-1.5.6.tar.xz
 +c152c6a90f6ae9e5a7a1d137dfbc0305  rspamd.logrotated
 +3f32a16e76e1461ffba9231cfb1e3d17  rspamd.initd
 +ecfea2a25b95727ae91c04001fbd3e46  rspamd.confd"
-+sha256sums="42faeea3b5ec2005e775b073397aefdf16d30cb0474083069724d5bc1f995edb  rspamd-1.5.5.tar.xz
++sha256sums="cda2a5b93f0e57b890767514ce00a2660baf9d48627f7367a36fe938ade14f31  rspamd-1.5.6.tar.xz
 +6c5e79e9052d957f3d0d634b2ae7a56bbc0901a5d6946dc991c92f19a72fce97  rspamd.logrotated
 +6b531f95724b2a3990524ab09b7304ce4e811b6e082dfdbe633f201a6bc7eee3  rspamd.initd
 +82be6a663af2e2333b0dfbbbfd05a9ff3d02e05c7e506235b1b0dbd9d0b72972  rspamd.confd"
-+sha512sums="74757e8a7a0153b576d524917921f74a255cc4e1e21a97963ef38d0c332e4c8c439eff451386d345de3cb7c781167eb74053ae716a8b990b4e242cba714663bb  rspamd-1.5.5.tar.xz
++sha512sums="3735052817ecd12d46505e4657456a01cde6aac25d7bdffaf0c8722458c674edbe89aeb589f338ec9ed22b5455314511fe1f55b5a0be3532761579b4f7b44cfa  rspamd-1.5.6.tar.xz
 +2efe28575c40d1fba84b189bb872860e744400db80dce2f6330be6c6287fb3f46e6511284729b957488bf40bcb9b0952e26df9934f5f138334bd2766075c45cb  rspamd.logrotated
 +30b45812ef68f2b82d0d7f370b44bec52691296c7349c96c8273342eb4f9b5708c13ad97b13f63d81bee588b4e459c0da3092a62adff9e5b8938f44546df3dcd  rspamd.initd
 +0b73b159cec9a4a1d337fbb429814f78da23b55f72c9fb8a777ab5f06634206a4f9b25e587f8dbfa7c3242ac5501ebcc90b9a0e926adfd37e14a12ac4607fa62  rspamd.confd"
