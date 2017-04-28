@@ -1,6 +1,6 @@
 diff --git a/testing/static-rspamd/APKBUILD b/testing/static-rspamd/APKBUILD
 new file mode 100644
-index 0000000..cfdda36
+index 0000000..d289a35
 --- /dev/null
 +++ b/testing/static-rspamd/APKBUILD
 @@ -0,0 +1,79 @@
@@ -40,7 +40,7 @@ index 0000000..cfdda36
 +		-DENABLE_LUAJIT=ON \
 +		-DENABLE_STATIC=ON \
 +		-DENABLE_PCRE2=ON \
-+		-DENABLE_HYPERSCAN=ON \
++		-DENABLE_HYPERSCAN=OFF \
 +		-DHYPERSCAN_ROOT_DIR=/home/abuild/hyperscan \
 +		-DENABLE_FANN=ON \
 +		-DFANN_ROOT_DIR=/home/abuild/fann \
