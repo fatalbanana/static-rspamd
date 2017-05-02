@@ -1,6 +1,6 @@
 diff --git a/testing/static-rspamd/APKBUILD b/testing/static-rspamd/APKBUILD
 new file mode 100644
-index 0000000..97ca692
+index 0000000..45d760d
 --- /dev/null
 +++ b/testing/static-rspamd/APKBUILD
 @@ -0,0 +1,83 @@
@@ -76,17 +76,17 @@ index 0000000..97ca692
 +c152c6a90f6ae9e5a7a1d137dfbc0305  rspamd.logrotated
 +3f32a16e76e1461ffba9231cfb1e3d17  rspamd.initd
 +ecfea2a25b95727ae91c04001fbd3e46  rspamd.confd
-+eb96a453da1fce142542d5174ff22748  pcre.patch"
++9c4fa6a266692d1594b064fb832a7487  pcre.patch"
 +sha256sums="73d18b129a072e35c74c9a440abdd0985fa15696d308a5e23736ec007432fd70  rspamd-1.5.7.tar.gz
 +6c5e79e9052d957f3d0d634b2ae7a56bbc0901a5d6946dc991c92f19a72fce97  rspamd.logrotated
 +6b531f95724b2a3990524ab09b7304ce4e811b6e082dfdbe633f201a6bc7eee3  rspamd.initd
 +82be6a663af2e2333b0dfbbbfd05a9ff3d02e05c7e506235b1b0dbd9d0b72972  rspamd.confd
-+73c845e87345a9c85ccb7dd5495d123ffea28cf36d2cb8cf5312979be794f19e  pcre.patch"
++8dbebc70d6bbdb38b004fe49e4790fec678bbe792ecc4e56b4c5e259ddc7d59a  pcre.patch"
 +sha512sums="362f8615795c739d1c869dd48426dadee38924287d82ad725baf0d3f80aa4571db29501d95d1497d3dfef61af39c2c7254f2c9437ee46f453e380f595b5873ca  rspamd-1.5.7.tar.gz
 +2efe28575c40d1fba84b189bb872860e744400db80dce2f6330be6c6287fb3f46e6511284729b957488bf40bcb9b0952e26df9934f5f138334bd2766075c45cb  rspamd.logrotated
 +30b45812ef68f2b82d0d7f370b44bec52691296c7349c96c8273342eb4f9b5708c13ad97b13f63d81bee588b4e459c0da3092a62adff9e5b8938f44546df3dcd  rspamd.initd
 +0b73b159cec9a4a1d337fbb429814f78da23b55f72c9fb8a777ab5f06634206a4f9b25e587f8dbfa7c3242ac5501ebcc90b9a0e926adfd37e14a12ac4607fa62  rspamd.confd
-+342e989b172fe8fddffa1a1d09c9604f7e326ca2ec9e104d04451c363c73942756508f03a6d13fef5d3649bcb87863ce29a5f8a6d871a2dc7086fa7b9e787b19  pcre.patch"
++71f4429da503a44b3455ec4daa9439f7d699aa780828c401c29ec41ae05530dc6b3b49148a59e023b9712169bc2af29430702ab27b449c7162b4d6e1906771d5  pcre.patch"
 diff --git a/testing/static-rspamd/pcre.patch b/testing/static-rspamd/pcre.patch
 new file mode 100644
 index 0000000..c9dc77d
