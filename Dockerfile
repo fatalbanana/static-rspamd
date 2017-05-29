@@ -1,10 +1,10 @@
-FROM alpine:3.5
+FROM alpine:3.6
 ADD https://github.com/libfann/fann/archive/2.2.0.tar.gz /home/abuild/
 COPY *.patch /home/abuild/
 RUN adduser -DG abuild abuild \
 	&& apk update \
 	&& apk upgrade \
-	&& apk add alpine-sdk boost-dev cmake libressl-dev luajit-dev ragel rsync sed sudo \
+	&& apk add alpine-sdk boost-dev cmake libressl-dev luajit-dev ragel rsync sed sudo glib-static gettext-static \
 	&& echo "abuild ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/abuild \
 	&& chown abuild:abuild /home/abuild/2.2.0.tar.gz
 USER abuild
@@ -28,10 +28,6 @@ RUN cd /home/abuild \
 	&& cd ../file \
 	&& abuild -r \
 	&& cd ../util-linux \
-	&& abuild -r \
-	&& cd ../gettext \
-	&& abuild -r \
-	&& cd ../glib \
 	&& abuild -r \
 	&& cd ../libevent \
 	&& abuild -r \

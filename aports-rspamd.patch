@@ -1,13 +1,19 @@
+commit ce88625203dc95cbb42f49f1a1532a98f1182409
+Author: Andrew Lewis <nerf@judo.za.org>
+Date:   Mon May 29 12:09:42 2017 +0200
+
+    rspamd
+
 diff --git a/testing/static-rspamd/APKBUILD b/testing/static-rspamd/APKBUILD
 new file mode 100644
-index 0000000..c66df86
+index 0000000..c2775ee
 --- /dev/null
 +++ b/testing/static-rspamd/APKBUILD
-@@ -0,0 +1,79 @@
+@@ -0,0 +1,71 @@
 +# Maintainer: Andrew Lewis <nerf@judo.za.org>
 +# Contributor: Valery Kartel <valery.kartel@gmail.com>
 +pkgname=rspamd
-+pkgver=1.5.7
++pkgver=1.5.8
 +pkgrel=1
 +pkgdesc="Rapid spam filtering system"
 +url="https://rspamd.com"
@@ -21,7 +27,7 @@ index 0000000..c66df86
 +	luajit-dev sqlite-dev file-dev pcre2-dev"
 +options="!strip"
 +install="$pkgname.pre-install"
-+source="https://aluminium.tinfoilcat.org/rspamd-snap/rspamd-1.5.7.tar.gz
++source="https://aluminium.tinfoilcat.org/rspamd-snap/rspamd-1.5.8.tar.gz
 +	$pkgname.logrotated
 +	$pkgname.initd
 +	$pkgname.confd
@@ -71,15 +77,7 @@ index 0000000..c66df86
 +	rm -rf "$pkgdir"/usr/share/man
 +}
 +
-+md5sums="f0989ffb09f0248ae867cdd7fb4c5d78  rspamd-1.5.7.tar.gz
-+c152c6a90f6ae9e5a7a1d137dfbc0305  rspamd.logrotated
-+3f32a16e76e1461ffba9231cfb1e3d17  rspamd.initd
-+ecfea2a25b95727ae91c04001fbd3e46  rspamd.confd"
-+sha256sums="cb428b92ae14b3103822aa63f8a731f2ad643139878878a5d9f81cd3c33d27f4  rspamd-1.5.7.tar.gz
-+6c5e79e9052d957f3d0d634b2ae7a56bbc0901a5d6946dc991c92f19a72fce97  rspamd.logrotated
-+6b531f95724b2a3990524ab09b7304ce4e811b6e082dfdbe633f201a6bc7eee3  rspamd.initd
-+82be6a663af2e2333b0dfbbbfd05a9ff3d02e05c7e506235b1b0dbd9d0b72972  rspamd.confd"
-+sha512sums="4dc8a0bf42421efd2102df2fee370f35e36ae0f466326bdc2bdd3b44e25724acba12311cc848ed70c2e38d723c425ce3ae4161e4d8af2082ad42f2aec3c94c08  rspamd-1.5.7.tar.gz
++sha512sums="9ba18c15458a14673db62cd4db7d6bc54057f97d0e77ffca816d4fb2cee86c7deffed9261f05b33cd9261ec0a0939555874d800663cd7b78e9356cc653c2a4bf  rspamd-1.5.7.tar.gz
 +2efe28575c40d1fba84b189bb872860e744400db80dce2f6330be6c6287fb3f46e6511284729b957488bf40bcb9b0952e26df9934f5f138334bd2766075c45cb  rspamd.logrotated
 +30b45812ef68f2b82d0d7f370b44bec52691296c7349c96c8273342eb4f9b5708c13ad97b13f63d81bee588b4e459c0da3092a62adff9e5b8938f44546df3dcd  rspamd.initd
 +0b73b159cec9a4a1d337fbb429814f78da23b55f72c9fb8a777ab5f06634206a4f9b25e587f8dbfa7c3242ac5501ebcc90b9a0e926adfd37e14a12ac4607fa62  rspamd.confd"

@@ -1,12 +1,12 @@
 diff --git a/main/musl/APKBUILD b/main/musl/APKBUILD
-index a311a2b..dde784a 100644
+index ee790a9..6db8ff7 100644
 --- a/main/musl/APKBUILD
 +++ b/main/musl/APKBUILD
-@@ -115,6 +115,7 @@ package() {
+@@ -163,6 +163,7 @@ compat() {
+ 	esac
+ 	ln -sf "/lib/libc.musl-${CARCH}.so.1" "$subpkgdir/lib/$_ld"
  
- 	# make LDSO the be the real file, and libc the symlink
- 	local LDSO=$(make -f Makefile --eval "$(echo -e 'print-ldso:\n\t@echo $$(basename $(LDSO_PATHNAME))')" print-ldso)
 +	mv -f "$pkgdir"/usr/lib/libc.a "$pkgdir"/lib/libc.a || return 1
- 	mv -f "$pkgdir"/usr/lib/libc.so "$pkgdir"/lib/"$LDSO" || return 1
- 	ln -sf "$LDSO" "$pkgdir"/lib/libc.musl-${CARCH}.so.1 || return 1
- 	ln -sf ../../lib/"$LDSO" "$pkgdir"/usr/lib/libc.so || return 1
+ 	for i in libc.so.6 libcrypt.so.1 libm.so.6 libpthread.so.0 librt.so.1 libutil.so.1; do
+ 		ln -sf "/lib/libc.musl-${CARCH}.so.1" "$subpkgdir/lib/$i"
+ 	done
