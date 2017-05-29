@@ -18,7 +18,7 @@ RUN cd /home/abuild \
 	&& git config --global user.email "you@example.com" \
 	&& git config --global user.name "Your Name" \
 	&& abuild-keygen -ai \
-	&& git clone -b 3.5-stable https://github.com/alpinelinux/aports.git \
+	&& git clone -b 3.6-stable https://github.com/alpinelinux/aports.git \
 	&& cd aports \
 	&& git apply /home/abuild/aports*patch \
 	&& cd main/musl \
