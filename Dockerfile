@@ -21,8 +21,6 @@ RUN cd /home/abuild \
 	&& git clone -b 3.6-stable https://github.com/alpinelinux/aports.git \
 	&& cd aports \
 	&& git apply /home/abuild/aports*patch \
-	&& cd main/musl \
-	&& abuild -r \
 	&& cd ../icu \
 	&& abuild -r \
 	&& cd ../file \
