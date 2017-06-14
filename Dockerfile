@@ -40,6 +40,7 @@ RUN cd /home/abuild \
 	&& cd git.hyperscan \
 	&& git checkout v4.5.0 \
 	&& rm -rf unit \
+	&& git apply /home/abuild/hyperscan.patch \
 	&& cd .. \
 	&& mkdir hyperscan build.hyperscan \
 	&& cd build.hyperscan \
