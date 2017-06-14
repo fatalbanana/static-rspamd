@@ -39,6 +39,7 @@ RUN cd /home/abuild \
 	&& mv hyperscan git.hyperscan \
 	&& cd git.hyperscan \
 	&& git checkout v4.5.0 \
+	&& rm unit/CMakeLists.txt \
 	&& cd .. \
 	&& mkdir hyperscan build.hyperscan \
 	&& cd build.hyperscan \
