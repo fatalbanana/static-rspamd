@@ -4,7 +4,7 @@ COPY *.patch /home/abuild/
 RUN adduser -DG abuild abuild \
 	&& apk update \
 	&& apk upgrade \
-	&& apk add alpine-sdk boost-dev cmake coreutils libressl-dev luajit-dev ragel rsync sed sudo glib-static gettext-static \
+	&& apk add alpine-sdk cmake libressl-dev luajit-dev ragel rsync sudo glib-static gettext-static \
 	&& echo "abuild ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/abuild \
 	&& chown abuild:abuild /home/abuild/2.2.0.tar.gz
 USER abuild
@@ -34,18 +34,6 @@ RUN cd /home/abuild \
 	&& cd ../../community/pcre2 \
 	&& abuild -r \
 	&& sudo apk add /home/abuild/packages/main/x86_64/*apk /home/abuild/packages/community/x86_64/*apk \
-	&& cd /home/abuild \
-	&& git clone https://github.com/01org/hyperscan.git \
-	&& mv hyperscan git.hyperscan \
-	&& cd git.hyperscan \
-	&& git checkout v4.3.2 \
-	&& cd .. \
-	&& mkdir hyperscan build.hyperscan \
-	&& cd build.hyperscan \
-	&& cmake -DCMAKE_INSTALL_PREFIX=/home/abuild/hyperscan \
-	-DCMAKE_BUILD_TYPE=Release ../git.hyperscan \
-	&& make \
-	&& make install/strip \
 	&& cd /home/abuild/aports/testing/static-rspamd \
 	&& abuild -r \
 	&& sudo apk add /home/abuild/packages/testing/x86_64/rspamd*apk \
