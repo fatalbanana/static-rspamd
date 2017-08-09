@@ -2,8 +2,8 @@ machine:
     services:
      - docker
 
-test:
-  override:
+dependencies:
+  pre:
     - docker build -t builder .
     - docker run -d builder /usr/bin/top > /tmp/builderid
     - mkdir ~/docker
@@ -13,5 +13,7 @@ test:
     - docker build -t rspamd ~/docker
     - docker save rspamd > ~/rspamd.tar
     - xz ~/rspamd.tar
+
+test:
   post:
     - mv ~/rspamd.tar.xz $CIRCLE_ARTIFACTS
