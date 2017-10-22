@@ -1,13 +1,13 @@
 diff --git a/testing/static-rspamd/APKBUILD b/testing/static-rspamd/APKBUILD
 new file mode 100644
-index 0000000..d7e47a4
+index 0000000..3cae604
 --- /dev/null
 +++ b/testing/static-rspamd/APKBUILD
 @@ -0,0 +1,71 @@
 +# Maintainer: Andrew Lewis <nerf@judo.za.org>
 +# Contributor: Valery Kartel <valery.kartel@gmail.com>
 +pkgname=rspamd
-+pkgver=1.6.3
++pkgver=1.6.5
 +pkgrel=1
 +pkgdesc="Rapid spam filtering system"
 +url="https://rspamd.com"
@@ -21,7 +21,7 @@ index 0000000..d7e47a4
 +	luajit-dev sqlite-dev file-dev pcre2-dev"
 +options="!strip"
 +install="$pkgname.pre-install"
-+source="https://aluminium.tinfoilcat.org/rspamd-download/rspamd-1.6.3.tar.gz
++source="https://aluminium.tinfoilcat.org/rspamd-download/rspamd-1.6.5.tar.gz
 +	$pkgname.logrotated
 +	$pkgname.initd
 +	$pkgname.confd
@@ -71,7 +71,7 @@ index 0000000..d7e47a4
 +	rm -rf "$pkgdir"/usr/share/man
 +}
 +
-+sha512sums="c03810523890e631cf6b315ae5360f02833ceb236d2685f7f20138a680a39b04060415170c7bc5f88aaf74f8a05df248b9e49bbbde285909e56a1a12f36e03bf  rspamd-1.6.1.tar.gz
++sha512sums="789abc994cf96a0d88662e14f0e77f95f5c7c7bd1f808ffd64af21cf73cef643b5aee4c1f066d81d04e79d6bb7f72f12095ff08d8515a40bcca23153715fc9f1  rspamd-1.6.5.tar.gz
 +2efe28575c40d1fba84b189bb872860e744400db80dce2f6330be6c6287fb3f46e6511284729b957488bf40bcb9b0952e26df9934f5f138334bd2766075c45cb  rspamd.logrotated
 +30b45812ef68f2b82d0d7f370b44bec52691296c7349c96c8273342eb4f9b5708c13ad97b13f63d81bee588b4e459c0da3092a62adff9e5b8938f44546df3dcd  rspamd.initd
 +0b73b159cec9a4a1d337fbb429814f78da23b55f72c9fb8a777ab5f06634206a4f9b25e587f8dbfa7c3242ac5501ebcc90b9a0e926adfd37e14a12ac4607fa62  rspamd.confd"
