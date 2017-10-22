@@ -1,12 +1,12 @@
 diff --git a/main/file/APKBUILD b/main/file/APKBUILD
-index fbdb5bb..8a1935c 100644
+index 34f8a92..3633216 100644
 --- a/main/file/APKBUILD
 +++ b/main/file/APKBUILD
-@@ -29,6 +29,7 @@ build() {
+@@ -14,6 +14,7 @@ builddir="$srcdir/$pkgname-$pkgver"
+ build() {
+ 	cd "$builddir"
+ 	./configure \
++		--enable-static \
+ 		--build=$CBUILD \
  		--host=$CHOST \
  		--prefix=/usr \
- 		--datadir=/usr/share \
-+		--enable-static \
- 		|| return 1
- 	make || return 1
- 	make tests || return 1
