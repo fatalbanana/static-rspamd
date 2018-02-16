@@ -31,7 +31,7 @@ RUN cd /home/abuild \
 	&& abuild -r \
 	&& cd ../sqlite \
 	&& abuild -r \
-	&& sudo apk add /home/abuild/packages/main/x86_64/*apk /home/abuild/packages/community/x86_64/*apk \
+	&& sudo apk add /home/abuild/packages/main/x86_64/*apk \
 	&& cd /home/abuild/aports/testing/static-rspamd \
 	&& abuild -r \
 	&& sudo apk add /home/abuild/packages/testing/x86_64/rspamd*apk \
