@@ -4,7 +4,7 @@ COPY *.patch /home/abuild/
 RUN adduser -DG abuild abuild \
 	&& apk update \
 	&& apk upgrade \
-	&& apk add alpine-sdk cmake libressl-dev luajit-dev ragel rsync sudo glib-static gettext-static \
+	&& apk add alpine-sdk cmake libressl-dev luajit-dev ragel rsync sudo glib-static gettext-static pcre2-dev \
 	&& echo "abuild ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/abuild \
 	&& chown abuild:abuild /home/abuild/2.2.0.tar.gz
 USER abuild
@@ -30,8 +30,6 @@ RUN cd /home/abuild \
 	&& cd ../libevent \
 	&& abuild -r \
 	&& cd ../sqlite \
-	&& abuild -r \
-	&& cd ../../community/pcre2 \
 	&& abuild -r \
 	&& sudo apk add /home/abuild/packages/main/x86_64/*apk /home/abuild/packages/community/x86_64/*apk \
 	&& cd /home/abuild/aports/testing/static-rspamd \
