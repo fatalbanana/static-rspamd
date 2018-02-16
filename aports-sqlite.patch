@@ -1,13 +1,13 @@
 diff --git a/main/sqlite/APKBUILD b/main/sqlite/APKBUILD
-index bea7686..a7a5181 100644
+index 7144965..8ba9581 100644
 --- a/main/sqlite/APKBUILD
 +++ b/main/sqlite/APKBUILD
-@@ -48,7 +48,7 @@ build() {
+@@ -50,7 +50,7 @@ build() {
  		--host=$CHOST \
  		--prefix=/usr \
  		--enable-threadsafe \
 -		--disable-static \
 +		--enable-static \
  		--enable-readline \
- 		--enable-dynamic-extensions \
- 		|| return 1
+ 		--enable-dynamic-extensions
+ 

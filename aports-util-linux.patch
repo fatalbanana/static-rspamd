@@ -1,10 +1,10 @@
 diff --git a/main/util-linux/APKBUILD b/main/util-linux/APKBUILD
-index 3f75880..67deda5 100644
+index 74d5a5e..8e73b27 100644
 --- a/main/util-linux/APKBUILD
 +++ b/main/util-linux/APKBUILD
-@@ -117,7 +117,7 @@ libmount() {
+@@ -111,7 +111,7 @@ libmount() {
  	pkgdesc="Block device identification library from util-linux"
- 	depends=
+ 	depends=""
  	mkdir -p "$subpkgdir"/lib
 -	mv "$pkgdir"/lib/libmount.so.* "$subpkgdir"/lib/
 +	mv "$pkgdir"/lib/libmount* "$subpkgdir"/lib/
